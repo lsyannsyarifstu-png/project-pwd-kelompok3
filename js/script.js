@@ -1,22 +1,17 @@
+const tombolTema = document.getElementById("tombol-tema");
 
-// ===== BAGIAN UMUM: mode gelap (dipakai semua halaman) ===== 
-const tombolTema = document.getElementById("tombol-tema"); 
-  
-if (tombolTema) { 
-  tombolTema.addEventListener("click", function () { 
-    document.body.classList.toggle("gelap"); 
-  
-    if (document.body.classList.contains("gelap")) { 
-      tombolTema.textContent = "Mode Terang"; 
-    } else { 
-      tombolTema.textContent = "Mode Gelap"; 
-    } 
-  }); 
-} 
+// Mode gelap
+if (tombolTema) {
+  tombolTema.addEventListener("click", function () {
+    document.body.classList.toggle("gelap");
 
-// ===== BAGIAN MAHASISWA 2 (Beranda) =====
+    tombolTema.textContent = document.body.classList.contains("gelap")
+      ? "Mode Terang"
+      : "Mode Gelap";
+  });
+}
 
-// ===== BAGIAN MAHASISWA 3 (Wulan halaman kegiatan) =====
+// Data kegiatan
 const kegiatan = [
   {
     id: 1,
@@ -24,7 +19,8 @@ const kegiatan = [
     kategori: "sosialisasi",
     tanggal: "12 November 2026",
     lokasi: "Auditorium Politeknik Negeri Cilacap",
-    deskripsi: "Sosialisasi kebijakan pencegahan dan penanganan kekerasan di lingkungan perguruan tinggi bagi seluruh mahasiswa baru dan perwakilan ormawa."
+    deskripsi:
+      "Sosialisasi kebijakan pencegahan dan penanganan kekerasan di lingkungan perguruan tinggi.",
   },
   {
     id: 2,
@@ -32,7 +28,8 @@ const kegiatan = [
     kategori: "pelatihan",
     tanggal: "20 November 2026",
     lokasi: "Ruang Seminar Gedung A",
-    deskripsi: "Pelatihan pembekalan konselor sebaya untuk memberikan dukungan awal yang aman dan berempati kepada rekan mahasiswa."
+    deskripsi:
+      "Pelatihan konselor sebaya untuk memberikan dukungan awal kepada mahasiswa.",
   },
   {
     id: 3,
@@ -40,7 +37,7 @@ const kegiatan = [
     kategori: "kampanye",
     tanggal: "27 November 2026",
     lokasi: "Plaza Utama Kampus PNC",
-    deskripsi: "Aksi kampanye damai, pembagian materi edukasi, serta penandatanganan komitmen bersama civitas akademika demi lingkungan kampus aman."
+    deskripsi: "Kampanye edukasi untuk mewujudkan lingkungan kampus yang aman.",
   },
   {
     id: 4,
@@ -48,7 +45,8 @@ const kegiatan = [
     kategori: "diskusi",
     tanggal: "4 Desember 2026",
     lokasi: "Ruang Rapat Satgas PPKPT",
-    deskripsi: "Diskusi kelompok terarah bersama dosen, tenaga kependidikan, dan mahasiswa dalam menyempurnakan alur layanan pelaporan yang aman dan rahasia."
+    deskripsi:
+      "Diskusi penyempurnaan alur layanan pelaporan yang aman dan rahasia.",
   },
   {
     id: 5,
@@ -56,69 +54,90 @@ const kegiatan = [
     kategori: "pelatihan",
     tanggal: "11 Desember 2026",
     lokasi: "Laboratorium Terpadu",
-    deskripsi: "Workshop pengenalan prinsip psychological first aid bagi pengurus ormawa dan relawan satgas."
+    deskripsi:
+      "Workshop pengenalan pertolongan pertama psikologis bagi relawan.",
   },
 ];
 
-const daftarKegiatan = document.getElementById("daftarKegiatan");
-const cariKegiatan = document.getElementById("cariKegiatan");
-const kategoriKegiatan = document.getElementById("kategoriKegiatan");
+const daftar = document.getElementById("daftarKegiatan");
+const pencarian = document.getElementById("cariKegiatan");
+const filter = document.getElementById("kategoriKegiatan");
 const pesanKosong = document.getElementById("pesanKosong");
 const modal = document.getElementById("modalKegiatan");
-const detailKegiatan = document.getElementById("detailKegiatan");
-const tutupModal = document.getElementById("tutupModal");
+const detail = document.getElementById("detailKegiatan");
+const tombolTutup = document.getElementById("tutupModal");
 
-if (daftarKegiatan && cariKegiatan && kategoriKegiatan) {
+// Jalankan hanya jika elemen halaman kegiatan tersedia
+if (daftar && pencarian && filter) {
   function tampilkanKegiatan() {
-    const kataKunci = cariKegiatan.value.toLowerCase().trim();
-    const kategori = kategoriKegiatan.value;
+    const kataKunci = pencarian.value.toLowerCase().trim();
+    const kategori = filter.value;
 
-    const hasil = kegiatan.filter(item => {
-      const cocokNama = item.nama.toLowerCase().includes(kataKunci);
-      const cocokKategori = kategori === "semua" || item.kategori === kategori;
-      return cocokNama && cocokKategori;
-    });
+    const hasil = kegiatan.filter(
+      (item) =>
+        item.nama.toLowerCase().includes(kataKunci) &&
+        (kategori === "semua" || item.kategori === kategori),
+    );
 
-    daftarKegiatan.innerHTML = hasil.map(item => `
+    daftar.innerHTML = hasil
+      .map(
+        (item) => `
       <article class="kartu-kegiatan">
         <span class="label-kategori">${item.kategori}</span>
         <h3>${item.nama}</h3>
         <p><strong>Tanggal:</strong> ${item.tanggal}</p>
         <p><strong>Lokasi:</strong> ${item.lokasi}</p>
-        <button type="button" class="btn-detail" data-id="${item.id}" onclick="bukaDetail(${item.id})">Lihat Detail</button>
+        <button type="button" class="btn-detail"
+                data-id="${item.id}">Lihat Detail</button>
       </article>
-    `).join("");
+    `,
+      )
+      .join("");
 
     if (pesanKosong) {
-      pesanKosong.hidden = hasil.length > 0;
+      pesanKosong.hidden = hasil.length !== 0;
     }
   }
 
-  function bukaDetail(id) {
-    const item = kegiatan.find(k => k.id == id);
-    if (!item || !detailKegiatan || !modal) return;
+  // Tombol detail
+  daftar.addEventListener("click", function (event) {
+    const tombol = event.target.closest(".btn-detail");
+    if (!tombol) return;
 
-    detailKegiatan.innerHTML = `
-      <p style="margin-bottom: 10px;"><b>Kategori:</b> <span class="label-kategori" style="margin-left: 6px;">${item.kategori}</span></p>
-      <p style="margin-top: 12px; line-height: 1.6;"><b>Deskripsi:</b><br>${item.deskripsi}</p>
+    const item = kegiatan.find((k) => k.id === Number(tombol.dataset.id));
+
+    if (!item || !modal || !detail) return;
+
+    detail.innerHTML = `
+      <p><strong>Kategori:</strong> ${item.kategori}</p>
+      <p><strong>Tanggal:</strong> ${item.tanggal}</p>
+      <p><strong>Lokasi:</strong> ${item.lokasi}</p>
+      <p><strong>Deskripsi:</strong> ${item.deskripsi}</p>
     `;
 
-    modal.style.display = "flex";
-    modal.classList.add("aktif");
-    modal.removeAttribute("hidden");
     modal.hidden = false;
+    modal.classList.add("aktif");
+    if (tombolTutup) tombolTutup.focus();
+  });
 
-    if (tutupModal) {
-      tutupModal.focus();
-    }
-  }
+  // Pencarian dan filter
+  pencarian.addEventListener("input", tampilkanKegiatan);
+  filter.addEventListener("change", tampilkanKegiatan);
 
-  function tutupModalKegiatan() {
-    if (modal) {
-      modal.style.display = "none";
+  tampilkanKegiatan();
+}
+
+// Tutup modal
+if (tombolTutup && modal) {
+  tombolTutup.addEventListener("click", function () {
+    modal.classList.remove("aktif");
+    modal.hidden = true;
+  });
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
       modal.classList.remove("aktif");
-      modal.setAttribute("hidden", "");
       modal.hidden = true;
     }
-  }
+  });
 }
