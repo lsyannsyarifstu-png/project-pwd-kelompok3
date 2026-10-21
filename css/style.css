@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #020207;
+  background-color: #f4f6fb;
+  line-height: 1.6;
+}
+
+
+
+/* ===== BAGIAN UMUM (Lussy Ana Syrif) ===== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 32px;
+  background-color: #db0891;
+  color: white;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+}
+
+
+.logo-sub {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.menu a:hover,
+.menu a.aktif {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+}
+
+#tombol-tema {
+  font-size: 16px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 100px;
+  background-color: white;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.grid-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #db0891;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+footer {
+  padding: 20px 32px;
+  text-align: center;
+  background-color: #db0891;
+  color: white;
+}
+  
+/* Mode gelap (dipasang oleh JavaScript) */ 
+body.gelap { background-color: #201823; color: #e8e8e8; }
+
+body.gelap .card { background-color: #382e3e; border-color: #63386f; } 
+  
+@media (max-width: 600px) { 
+  .navbar { flex-direction: column; } 
+  .menu { gap: 14px; } 
+} 
