@@ -32,6 +32,23 @@
   <main> 
     <h2>Kegiatan</h2> 
     <!-- Isi halaman dikerjakan oleh anggota yang bertugas --> 
+      <p class="subjudul-halaman">Informasi seputar sosialisasi, pelatihan, dan kampanye pencegahan kekerasan di lingkungan kampus Politeknik Negeri Cilacap.</p>
+
+    <!-- Pencarian & Filter -->
+    <div class="filter-kegiatan">
+      <input type="text" id="cariKegiatan" placeholder="Cari nama kegiatan...">
+      <select id="kategoriKegiatan">
+        <option value="semua">Semua Kategori</option>
+        <option value="sosialisasi">Sosialisasi</option>
+        <option value="pelatihan">Pelatihan</option>
+        <option value="diskusi">Diskusi</option>
+      </select>
+    </div>
+
+    <!-- Grid Kartu Kegiatan dibuat oleh JavaScript -->
+    <div class="grid-kegiatan" id="daftarKegiatan"></div>
+
+    <p id="pesanKosong" class="pesan-kosong" hidden>Kegiatan tidak ditemukan.</p> <p class="subjudul-halaman">Informasi seputar sosialisasi, pelatihan, dan kampanye pencegahan kekerasan di lingkungan kampus Politeknik Negeri Cilacap.</p>
   </main> 
    <!-- Footer --> 
     <footer> 
