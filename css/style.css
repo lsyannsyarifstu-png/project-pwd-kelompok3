@@ -13,7 +13,7 @@ body {
 
 
 
-/* ===== BAGIAN UMUM (Lussy Ana Syrif) ===== */
+/* ===== BAGIAN UMUM (Ketua) ===== */
 
 .navbar {
   display: flex;
@@ -110,274 +110,109 @@ footer {
   background-color: #db0891;
   color: white;
 }
-  
-/* Mode gelap (dipasang oleh JavaScript) */ 
-body.gelap { background-color: #201823; color: #e8e8e8; }
 
-body.gelap .card { background-color: #382e3e; border-color: #63386f; } 
-  
-@media (max-width: 600px) { 
-  .navbar { flex-direction: column; } 
-  .menu { gap: 14px; } 
-} 
-
-
-/* ===== Bagian Kegiatan (Wulan Suci Cahyani) ===== */
-/* Modal Kegiatan */
-
-.filter-kegiatan {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 20px 0;
-}
-
-.filter-kegiatan input,
-.filter-kegiatan select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.grid-kegiatan {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.kartu-kegiatan {
-  padding: 20px;
-  background: white;
-  border: 1px solid #db0891;
-  border-radius: 10px;
-}
-
-.kartu-kegiatan h3 {
-  margin: 12px 0;
-}
-
-.kartu-kegiatan p {
-  margin: 8px 0;
-  overflow-wrap: anywhere;
-}
-
-.label-kategori {
-  display: inline-block;
-  padding: 4px 10px;
-  background: #fce7f3;
-  color: #831843;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-.btn-detail {
-  margin-top: 12px;
-  padding: 9px 14px;
-  border: none;
-  border-radius: 6px;
-  background: #db0891;
-  color: white;
-  cursor: pointer;
-}
-
-.modal-kegiatan {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.modal-kegiatan[hidden] {
-  display: none;
-}
-
-.isi-modal {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  padding: 24px;
-  background: white;
-  color: #222;
-  border-radius: 10px;
-}
-
-.tutup-modal {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  border: none;
-  background: transparent;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-body.gelap .kartu-kegiatan {
-  background: #382e3e;
+/* Mode gelap (dipasang oleh JavaScript) */
+body.gelap {
+  background-color: #19191b;
   color: #e8e8e8;
 }
 
-/* Halaman Kontak */
-.kontak-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-top: 20px;
+body.gelap .card {
+  background-color: #151921;
+  border-color: #33415c;
 }
 
-.kontak-info,
-.kontak-form-area {
-  background-color: #ffffff;
-  padding: 24px;
-/* ===== BAGIAN Layanan & Kontak (IVANA WYNNE ANASTASIA) ===== */
-
-/* Halaman Layanan */
-.alur-layanan {
-  margin-top: 36px;
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .menu {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-.kontak-info h3,
-.kontak-form-area h3 {
-  margin-bottom: 14px;
+/* ===== BAGIAN MAHASISWA 2 (Beranda dan Profil) ===== */
+
+/* Beranda */
+h2 {
+  text-align: center;
+  margin-bottom: 12px;
   color: #234b3a;
 }
 
-.tutup-modal {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 26px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  line-height: 1;
-}
-.info-item {
-  margin-bottom: 14px;
-}
-
-.info-item strong {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.info-catatan {
-  margin-top: 18px;
-  padding: 12px;
-  background-color: #fdf2f8;
-  border-left: 4px solid #7b3582;
-  border-radius: 4px;
-  font-size: 13px;
-}
-.alur-layanan h3 {
+.judul-bagian {
   text-align: center;
-  color: #fafffd;
-  margin-bottom: 20px;
+  color: #234b3a;
+  margin-bottom: 18px;
 }
 
-.alur-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.alur-item {
-  text-align: center;
-  padding: 16px;
-  background-color: #f8fafc;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-}
-
-.nomor-alur {
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  background-color: #744277;
-  color: white;
-  border-radius: 50%;
-  margin: 0 auto 10px;
-  font-weight: bold;
-}
-
-.alur-item h4 {
+.kartu-ikon {
+  font-size: 28px;
   margin-bottom: 8px;
 }
 
-.kotak-aksi {
-  margin-top: 30px;
-  text-align: center;
-  background-color: #f1f7f3;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px dashed #234b3a;
+.tombol-grup {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
 }
 
-.btn-lapor {
+.btn-sekunder {
   display: inline-block;
   margin-top: 12px;
   padding: 10px 20px;
-  background-color: #742185;
-  color: white;
+  background-color: white;
+  color: #710287;
+  border: 1px solid #710287;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
 }
-/* ===== BAGIAN BERANDA & PROFIL (FAATHIMAH ANNAAFI'AH) ===== */
-/* ===== BAGIAN BERANDA & PROFIL (FAATHIMAH ANNAAFI'AH) ===== */
-
-/* beranda */
-h2 {
-    text-align: center;
-    margin: 30px 20px;
-    color: #000000;
-}
-
-.beranda {
-    background-color: #f1f7f3;
-    padding: 30px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-.beranda-teks {
-    text-align: center;
-    line-height: 1.8;
-}
 
 .beranda-next {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 25px;
-    margin: 30px 20px;
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .beranda-image {
-    flex: 150px;
+  flex: 0 0 180px;
+  max-width: 180px;
 }
 
 .beranda-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .beranda-teks2 {
-    flex: 1;
-    text-align: justify;
-    line-height: 1.8;
+  flex: 1;
+  line-height: 1.8;
+}
+
+.beranda-teks2 h3 {
+  color: #dad6dd;
+  margin-bottom: 10px;
+}
+
+.fokus-section,
+.visi-misi-section,
+.prinsip-section {
+  margin-bottom: 28px;
 }
 
 /* Profil */
@@ -440,4 +275,334 @@ h2 {
   margin-bottom: 24px;
   color: #4a5568;
 }
+
+/* ===== BAGIAN MAHASISWA 3 (Kegiatan) ===== */
+
+.filter-kegiatan {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-kegiatan input,
+.filter-kegiatan select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.grid-kegiatan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.kartu-kegiatan {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ikon-kegiatan {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.label-kategori {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #fce7f3;
+  color: #db0891;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 14px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.kartu-kegiatan h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4b2347;
+}
+
+.btn-detail {
+  margin-top: auto;
+  padding: 8px 14px;
+  background-color: #db0891;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pesan-kosong {
+  text-align: center;
+  padding: 30px;
+  color: #718096;
+}
+
+/* Modal Kegiatan */
+.modal-kegiatan {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal-kegiatan.aktif {
+  display: flex !important;
+}
+
+.modal-kegiatan:not([hidden]) {
+  display: flex;
+}
+
+.modal-kegiatan[hidden] {
+  display: none !important;
+}
+
+.isi-modal {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.isi-modal h3 {
+  margin-bottom: 14px;
+  color: #234b3a;
+}
+
+.tutup-modal {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 26px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ===== BAGIAN MAHASISWA 4 (Layanan & Kontak) ===== */
+
+/* Halaman Layanan */
+.alur-layanan {
+  margin-top: 36px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.alur-layanan h3 {
+  text-align: center;
+  color: #fafffd;
+  margin-bottom: 20px;
+}
+
+.alur-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.alur-item {
+  text-align: center;
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.nomor-alur {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  background-color: #744277;
+  color: white;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  font-weight: bold;
+}
+
+.alur-item h4 {
+  margin-bottom: 8px;
+}
+
+.kotak-aksi {
+  margin-top: 30px;
+  text-align: center;
+  background-color: #f1f7f3;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px dashed #234b3a;
+}
+
+.btn-lapor {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #742185;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Halaman Kontak */
+.kontak-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.kontak-info,
+.kontak-form-area {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.kontak-info h3,
+.kontak-form-area h3 {
+  margin-bottom: 14px;
+  color: #234b3a;
+}
+
+.info-item {
+  margin-bottom: 14px;
+}
+
+.info-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.info-catatan {
+  margin-top: 18px;
+  padding: 12px;
+  background-color: #fdf2f8;
+  border-left: 4px solid #7b3582;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #ffffff;
+}
+
+.btn-kirim {
+  width: 100%;
+  padding: 12px;
+  background-color: #7322a9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Dukungan Mode Gelap untuk Halaman Baru */
+body.gelap .kartu-kegiatan,
+body.gelap .isi-modal,
+body.gelap .alur-layanan,
+body.gelap .alur-item,
+body.gelap .kontak-info,
+body.gelap .kontak-form-area {
+  background-color: #1c2538;
+  border-color: #33415c;
+  color: #e8e8e8;
+}
+
+body.gelap .kotak-aksi {
+  background-color: #1c2538;
+  border-color: #7c2791;
+  color: #e8e8e8;
+}
+
+body.gelap .subjudul-halaman {
+  color: #cbd5e1;
+}
+
+body.gelap h2,
+body.gelap .kartu-kegiatan h3,
+body.gelap .alur-layanan h3,
+body.gelap .kontak-info h3,
+body.gelap .kontak-form-area h3,
+body.gelap .isi-modal h3 {
+  color: #f1f1f1;
+}
+
+body.gelap .filter-kegiatan input,
+body.gelap .filter-kegiatan select,
+body.gelap .form-group input,
+body.gelap .form-group select,
+body.gelap .form-group textarea {
+  background-color: #121826;
+  border-color: #33415c;
+  color: #e8e8e8;
+}
+
+body.gelap .info-catatan {
+  background-color: #271b2d;
+  color: #782983;
+}
+
+body.gelap .beranda-next,
+body.gelap .profil {
+  background-color: #1c2538;
+  border-color: #33415c;
+  color: #e8e8e8;
+}
+
+body.gelap .beranda-teks2 h3,
+body.gelap .profil-teks h3,
+body.gelap .judul-bagian {
+  color: #f0f5f3;
+}
+
+body.gelap .btn-sekunder {
+  background-color: #231226;
+  color: #793071;
+  border-color: #793071;
 }
