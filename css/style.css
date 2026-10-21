@@ -186,3 +186,51 @@ body.gelap .card { background-color: #382e3e; border-color: #63386f; }
   border-radius: 6px;
   font-weight: bold;
 }
+/* ===== BAGIAN BERANDA & PROFIL (FAATHIMAH ANNAAFI'AH) ===== */
+
+/* beranda */
+h2 {
+    text-align: center;
+    margin: 30px 20px;
+    color: #000000;
+}
+
+.beranda {
+    background-color: #f1f7f3;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.beranda-teks {
+    text-align: center;
+    line-height: 1.8;
+}
+
+.beranda-next {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin: 30px 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.beranda-image {
+    flex: 150px;
+}
+
+.beranda-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.beranda-teks2 {
+    flex: 1;
+    text-align: justify;
+    line-height: 1.8;
+}
