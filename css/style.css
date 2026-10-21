@@ -121,6 +121,36 @@ body.gelap .card { background-color: #382e3e; border-color: #63386f; }
   .menu { gap: 14px; } 
 } 
 
+/* ===== BAGIAN BERANDA DAN PROFIL (FAATHIMAH ANNAAFI'AH) ===== */
+/* profil*/ 
+
+.profil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.profil-teks {
+    flex: 1;
+    text-align: justify;
+}
+
+.profil-image {
+    flex: 120px;
+    width: 120px;
+}
+
+.profil-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 /* Halaman Kontak */
 .kontak-wrapper {
   display: grid;
